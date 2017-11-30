@@ -28,9 +28,15 @@ ext {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+
 	compile('io.dropwizard.metrics:metrics-core')
-	compile'io.dropwizard.metrics:metrics-jvm:' + dependencyManagement.managedVersions['io.dropwizard.metrics:metrics-core']
-	compile('org.springframework.boot:spring-boot-starter-actuator')
+
+	//
+	//Try switching switching between these two dependencies and checking 'gradlew dependencyManagement' for whether the Spring Cloud BOM was imported or not.
+	//
+	compile 'io.dropwizard.metrics:metrics-jvm:' + dependencyManagement.managedVersions['io.dropwizard.metrics:metrics-core']
+	//compile 'io.dropwizard.metrics:metrics-jvm'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
