@@ -22,11 +22,6 @@ repositories {
 	mavenCentral()
 }
 
-ext['myProp'] = 'myValue'
-ext {
-	mySecondProp = 'anotherValue'
-}
-
 ext {
 	springCloudVersion = 'Edgware.RELEASE'
 }
@@ -43,9 +38,4 @@ dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
-}
-
-task myTask {
-	println project.myProp
-	println project.mySecondProp
 }
